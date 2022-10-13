@@ -5,9 +5,9 @@ from hard.U74HC595AG import U74HC595AG
 class RenderController(U74HC595AG):
 
     def __init__(self, ser: int, sck: int, rck: int):
-        self.ser = ser
-        self.sck = sck
-        self.rck = rck
+        self.ser: int = ser
+        self.sck: int = sck
+        self.rck: int = rck
 
     def shift(self):
         pass
@@ -15,6 +15,9 @@ class RenderController(U74HC595AG):
     def serial_input(self, sig: bool):
         pass
 
-    def latch(self):
+    # 8bitまで
+    def parallel_input(self, pattern: list[int]):
         pass
 
+    def latch(self):
+        pass
