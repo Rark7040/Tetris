@@ -9,3 +9,8 @@ class MainDisplay:
     def __init__(self):
         self.disref = DisplayRefresh
         self.rencon = RenderController
+
+    def on_update(self):
+        # TODO refresh
+        # TODO render control
+        pass  # every ticks
