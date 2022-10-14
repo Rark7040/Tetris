@@ -1,4 +1,7 @@
-class RPiConf:
+from enum import Enum
+
+
+class RPiConf(Enum):
     def __init__(self):
         pass
 
@@ -11,5 +14,11 @@ class RPiConf:
 
     def get_all_pin(self) -> list:
         return [
+            self.DISREF_SER,
+            self.DISREF_SCK,
+            self.DISREF_RCK,
+            self.RENCON_SER,
+            self.RENCON_SCK,
+            self.RENCON_RCK
             # TODO write members
         ]

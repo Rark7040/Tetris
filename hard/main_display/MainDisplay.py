@@ -8,9 +8,8 @@ class MainDisplay:
     MAX_Y_LINE: int = 14
 
     def __init__(self):
-        conf: RPiConf = RPiConf()
-        self.disref: DisplayRefresh = DisplayRefresh(conf.DISREF_SER, conf.DISREF_SCK, conf.DISREF_RCK)
-        self.rencon: RenderController = RenderController(conf.RENCON_SER, conf.RENCON_SCK, conf.RENCON_RCK)
+        self.disref: DisplayRefresh = DisplayRefresh(RPiConf.DISREF_SER, RPiConf.DISREF_SCK, RPiConf.DISREF_RCK)
+        self.rencon: RenderController = RenderController(RPiConf.RENCON_SER, RPiConf.RENCON_SCK, RPiConf.RENCON_RCK)
 
     def on_update(self):
         # TODO refresh
