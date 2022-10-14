@@ -1,4 +1,3 @@
-from hard import RPiConf
 from hard.main_display.DisplayRefresh import DisplayRefresh
 from hard.main_display.RenderController import RenderController
 from hard.RPiConf import RPiConf
