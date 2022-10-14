@@ -3,12 +3,6 @@ from hard.U74HC595AG import U74HC595AG
 
 # 2つカスケード接続されたu74hc595ag
 class DisplayRefresh(U74HC595AG):
-
-    def __init__(self, ser: int, sck: int, rck: int):
-        self.ser = ser
-        self.sck = sck
-        self.rck = rck
-
     def shift(self):
         pass
 
