@@ -1,4 +1,7 @@
 class RPiConf:
+    def __init__(self):
+        pass
+
     DISREF_SER: int = 0
     DISREF_SCK: int = 0
     DISREF_RCK: int = 0
