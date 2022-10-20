@@ -5,9 +5,12 @@ class RPiConf(Enum):
     def __init__(self):
         pass
 
+    # DisplayRefresh
     DISREF_SER: int = 0
     DISREF_SCK: int = 0
     DISREF_RCK: int = 0
+
+    # RenderController
     RENCON_SER: int = 0
     RENCON_SCK: int = 0
     RENCON_RCK: int = 0
