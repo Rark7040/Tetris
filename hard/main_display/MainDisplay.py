@@ -14,4 +14,5 @@ class MainDisplay:
     def on_update(self):
         # TODO refresh
         # TODO render control
+
         pass  # every ticks
