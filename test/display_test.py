@@ -108,7 +108,8 @@ bits = 0b111001100
 shift = ShiftRegister()
 sync = TransistorArray()
 
-for _ in range(300):
+for _ in range(10000):
+    time.sleep(0.005)
     shift.on_update()
     sync.output(bits)
 
