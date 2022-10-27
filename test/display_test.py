@@ -2,13 +2,13 @@ import time
 
 import RPi.GPIO as GPIO
 
-shift_srclk = 0
-shift_rclk = 0
-shift_ser = 0
+shift_srclk = 2
+shift_rclk = 3
+shift_ser = 4
 
-sync_srclk = 0
-sync_rclk = 0
-sync_ser = 0
+sync_srclk = 14
+sync_rclk = 15
+sync_ser = 18
 
 GPIO.setmode(GPIO.BCM)
 
