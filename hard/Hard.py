@@ -3,6 +3,7 @@ from hard.ui.AsyncButtonListener import AsyncButtonListener
 from hard.ui.UserResponse import UserResponse
 
 
+# TODO: ハード制御用のスレッドを生成
 class Hard:
     def __init__(self):
         self.main_display: MainDisplay = MainDisplay()

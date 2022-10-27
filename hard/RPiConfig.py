@@ -2,7 +2,7 @@ from enum import Enum
 
 
 # GPIO numbers
-class RPiConf(Enum):
+class RPiConfig(Enum):
     # DisplayRefresh
     DISREF_SER: int = 0
     DISREF_SCK: int = 0
