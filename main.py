@@ -1,18 +1,16 @@
 import RPi.GPIO as GPIO
 
-from hard.RPiConf import RPiConf
+from hard.RPiConfig import RPiConfig
 
 
 def main():
     init()
-    print("noop")
 
 
 def init():
-    conf = RPiConf()
     GPIO.setmode(GPIO.BCM)
 
-    for pin in conf.get_all_pin():
+    for pin in RPiConfig:
         GPIO.setup(pin, GPIO.OUT, initial=GPIO.LOW)
 
 

@@ -11,3 +11,6 @@ class DisplayRefresh(U74HC595AG):
 
     def latch(self):
         pass
+
+    def update(self):
+        pass
