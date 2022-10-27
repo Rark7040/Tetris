@@ -1,14 +1,16 @@
 from hard.main_display.MainDisplay import MainDisplay
-from hard.ui.Buttons import Buttons
+from hard.ui.AsyncButtonListener import AsyncButtonListener
+from hard.ui.UserResponse import UserResponse
 
 
 class Hard:
     def __init__(self):
         self.main_display: MainDisplay = MainDisplay()
-        self.buttons: Buttons = Buttons()
+        self.response: UserResponse = UserResponse()
+        self.button_listener: AsyncButtonListener = AsyncButtonListener(self.response)
 
     def get_main_display(self) -> MainDisplay:
         return self.main_display
 
-    def get_buttons(self) -> Buttons:
-        return self.buttons
+    def get_user_response(self) -> UserResponse:
+        return self.response

@@ -5,14 +5,12 @@ from hard.RPiConf import RPiConf
 
 def main():
     init()
-    print("noop")
 
 
 def init():
-    conf = RPiConf()
     GPIO.setmode(GPIO.BCM)
 
-    for pin in conf.get_all_pin():
+    for pin in RPiConf:
         GPIO.setup(pin, GPIO.OUT, initial=GPIO.LOW)
 
 
