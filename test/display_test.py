@@ -40,6 +40,7 @@ class ShiftRegister:
         GPIO.output(shift_srclk, GPIO.LOW)
 
     def input(self, sig: int):
+        time.sleep(0.5)
         GPIO.output(shift_ser, GPIO.HIGH if sig == 1 else GPIO.LOW)
 
     def shift(self):
@@ -58,7 +59,6 @@ class ShiftRegister:
         for _ in range(16):
             self.input(0)
             GPIO.output(shift_srclk, GPIO.HIGH)
-            time.sleep(0.5)
             GPIO.output(shift_srclk, GPIO.LOW)
 
         self.deploy()
@@ -85,6 +85,7 @@ class TransistorArray:
         GPIO.output(sync_rclk, GPIO.LOW)
 
     def input(self, sig: int):
+        time.sleep(0.5)
         GPIO.output(sync_ser, GPIO.HIGH if sig == 1 else GPIO.LOW)
 
     def shift(self):
