@@ -14,5 +14,9 @@ def init():
         GPIO.setup(pin, GPIO.OUT, initial=GPIO.LOW)
 
 
+def final():
+    GPIO.cleanup()
+
+
 if __name__ == '__main__':
     main()

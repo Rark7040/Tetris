@@ -1,8 +1,8 @@
-b = 0b10001001010
+b = 0b100001001010
 
-while b != 0b0:
+while b != 0b1:
     dump = b & 0b1
-    print(bin(b))
-    print(True if dump == 0b1 else False)
+    # print(True if dump == 0b1 else False)
 
     b = b >> 1
+    print(bin(b))
