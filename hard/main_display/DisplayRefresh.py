@@ -3,14 +3,26 @@ from hard.U74HC595AG import U74HC595AG
 
 # 2つカスケード接続されたu74hc595ag
 class DisplayRefresh(U74HC595AG):
-    def shift(self):
-        pass
+    MAX_BUS_PORT: int = 16
+    USE_BUS_PORT: int = 14
+    pos: int = 1
 
-    def serial_input(self, sig: bool):
-        pass
-
-    def latch(self):
-        pass
+    def __init__(self, ser: int, sck: int, rck: int):
+        super().__init__(ser, sck, rck)
+        self.serial_input(True)
+        self.latch()
 
     def update(self):
+        self.pos += 1
+
+        if self.pos > self.USE_BUS_PORT:
+            self.pos = 1
+            self.clear()
+            self.serial_input(True)
+            self.latch()
+
+        else:
+            self.shift()
+
+        self.latch()
         pass

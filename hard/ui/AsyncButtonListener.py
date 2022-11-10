@@ -7,7 +7,6 @@ from hard.ui.Buttons import Buttons
 from hard.ui.UserResponse import UserResponse
 
 
-# HACK: 普通にやばい書き方してるからいい方法が見つかり次第修正
 class AsyncButtonListener:
 
     def __init__(self, response: UserResponse):

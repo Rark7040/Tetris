@@ -6,6 +6,9 @@ from hard.RPiConfig import RPiConfig
 class MainDisplay:
     MAX_X_LINE: int = 8
     MAX_Y_LINE: int = 14
+    is_display_completed: bool = True
+    displaying: list[int] = []
+    displayed_lines = 0
 
     def __init__(self):
         self.disref: DisplayRefresh = DisplayRefresh(
@@ -19,8 +22,12 @@ class MainDisplay:
             RPiConfig.RENCON_RCK
         )
 
+    def display(self, pattern: list[int]):
+        self.displaying = pattern
+        self.displayed_lines = 0
+
     def on_update(self):
-        # TODO refresh
+        self.disref.update()
         # TODO render control
 
         pass  # every ticks
