@@ -1,3 +1,5 @@
+import asyncio
+
 from hard.main_display.DisplayRefresh import DisplayRefresh
 from hard.main_display.RenderController import RenderController
 from hard.RPiConfig import RPiConfig
@@ -25,9 +27,26 @@ class MainDisplay:
     def display(self, pattern: list[int]):
         self.displaying = pattern
         self.displayed_lines = 0
+        self.is_display_completed = False
 
-    def on_update(self):
+    def __display_line(self):
+        try:
+            line = self.displaying[self.displayed_lines]
+
+        except IndexError:
+            self.is_display_completed = True
+            return
+
+        self.rencon.input_bit(line | 0b1_0000_0000)
+        self.displayed_lines += 1
+
+    async def async_loop(self):
+        loop = asyncio.get_event_loop()
+        loop.run_in_executor(None, self.update)
+
+    def update(self):
+        if self.is_display_completed:
+            return
+        # TODO じゅんばん逆かも
         self.disref.update()
-        # TODO render control
-
-        pass  # every ticks
+        self.__display_line()

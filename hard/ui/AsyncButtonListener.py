@@ -19,14 +19,14 @@ class AsyncButtonListener:
     def listen(self):
         while True:
             time.sleep(0.05)
-            self.check_button(Buttons.RIGHT_ROTATE, RPiConfig.BUTTON_RIGHT_ROTATE)
-            self.check_button(Buttons.LEFT_ROTATE, RPiConfig.BUTTON_LEFT_ROTATE)
-            self.check_button(Buttons.RIGHT_MOVE, RPiConfig.BUTTON_RIGHT_MOVE)
-            self.check_button(Buttons.LEFT_MOVE, RPiConfig.BUTTON_LEFT_MOVE)
-            self.check_button(Buttons.DOWN_MOVE, RPiConfig.BUTTON_DOWN_MOVE)
-            self.check_button(Buttons.RESET, RPiConfig.BUTTON_RESET)
+            self.__check_button(Buttons.RIGHT_ROTATE, RPiConfig.BUTTON_RIGHT_ROTATE)
+            self.__check_button(Buttons.LEFT_ROTATE, RPiConfig.BUTTON_LEFT_ROTATE)
+            self.__check_button(Buttons.RIGHT_MOVE, RPiConfig.BUTTON_RIGHT_MOVE)
+            self.__check_button(Buttons.LEFT_MOVE, RPiConfig.BUTTON_LEFT_MOVE)
+            self.__check_button(Buttons.DOWN_MOVE, RPiConfig.BUTTON_DOWN_MOVE)
+            self.__check_button(Buttons.RESET, RPiConfig.BUTTON_RESET)
 
-    def check_button(self, button: int, gpio: int):
+    def __check_button(self, button: int, gpio: int):
         is_pressed = GPIO.input(gpio) == 0  # TODO: 動作確認
 
         if is_pressed:

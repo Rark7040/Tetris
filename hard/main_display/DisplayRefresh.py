@@ -9,8 +9,8 @@ class DisplayRefresh(U74HC595AG):
 
     def __init__(self, ser: int, sck: int, rck: int):
         super().__init__(ser, sck, rck)
-        self.serial_input(True)
-        self.latch()
+        self.__serial_input(True)
+        self.__latch()
 
     def update(self):
         self.pos += 1
@@ -18,11 +18,11 @@ class DisplayRefresh(U74HC595AG):
         if self.pos > self.USE_BUS_PORT:
             self.pos = 1
             self.clear()
-            self.serial_input(True)
-            self.latch()
+            self.__serial_input(True)
+            self.__latch()
 
         else:
-            self.shift()
+            self.__shift()
 
-        self.latch()
+        self.__latch()
         pass
