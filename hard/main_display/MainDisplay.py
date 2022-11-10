@@ -45,8 +45,11 @@ class MainDisplay:
         loop.run_in_executor(None, self.update)
 
     def update(self):
-        if self.is_display_completed:
-            return
-        # TODO じゅんばん逆かも
-        self.disref.update()
-        self.__display_line()
+        while True:
+            if self.is_display_completed:
+                # 画面のちらつき防止のため、描画対象がない場合は最後に描画したものを描画し続けます
+                self.is_display_completed = False
+                self.displayed_lines = 0
+            # TODO じゅんばん逆かも
+            self.disref.update()
+            self.__display_line()
