@@ -1,4 +1,7 @@
+from __future__ import annotations
+
 import copy
+from typing import Type
 
 
 class BitBlock:
@@ -6,42 +9,41 @@ class BitBlock:
         # horizontally bits
         self.bits: list[int] = []
 
-    def set(self, b: int):
-        self.bits.append(b)
+    def set(self, b: int, idx: int | None = None):
+        if idx is None:
+            self.bits.append(b)
+            return
 
-    def get_all(self) -> list[int]:
+        try:
+            self.bits[idx] = b
+
+        except IndexError:
+            self.bits.append(b)
+
+    def get(self, idx: int, fallback: int | None = None) -> int | None:
+        try:
+            return self.bits[idx]
+
+        except IndexError:
+            return fallback
+
+    def get_all_bits(self) -> list[int]:
         return self.bits
 
     def get_cloning_bits(self) -> list[int]:
         return copy.deepcopy(self.bits)
 
-    def rotate_to_left(self) -> list[int]:
-        bits: list[int] = self.get_cloning_bits()
-        tmp_bits: list[int] = []
+    def rotate_to_left(self) -> BitBlock:
+        result: BitBlock = BitBlock()
 
-        for b in bits:
+        for b in self.get_cloning_bits():
             i: int = 0
 
             while b != 0b1:
-                try:
-                    stored_b = tmp_bits[i]
-
-                except IndexError:
-                    stored_b = 0b1
-
+                stored_b = result.get(i, 0b1)
                 stored_b = (stored_b << 1) | (0b1 & b)
                 b = b >> 1
-
-                try:
-                    tmp_bits[i] = stored_b
-
-                except IndexError:
-                    tmp_bits.append(stored_b)
+                result.set(stored_b, i)
                 i += 1
 
-        return tmp_bits
-
-
-
-
-
+        return result

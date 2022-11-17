@@ -2,32 +2,22 @@ from soft.BitBlock import BitBlock
 
 block = BitBlock()
 block.set(0b1100)
-block.set(0b1100)
+block.set(0b1111)
 block.set(0b1100)
 
-for b in block.get_all():
+for b in block.get_all_bits():
     print(bin(b))
 
-print("\n\n\n")
+print("\n")
 
-for b in block.rotate_to_left():
+for b in block.rotate_to_left().get_cloning_bits():
     print(bin(b))
 
-print("\n\n\n")
+print("\n")
 
 
-new_block = BitBlock()
-for nb in block.rotate_to_left():
-    new_block.set(nb)
+for b in block.rotate_to_left().rotate_to_left().rotate_to_left().get_cloning_bits():
+    print(bin(b))
 
-for nb in new_block.rotate_to_left():
-    print(bin(nb))
+print("\n")
 
-print("\n\n\n")
-
-new_block2 = BitBlock()
-for nb in new_block.rotate_to_left():
-    new_block2.set(nb)
-
-for nb in new_block2.rotate_to_left():
-    print(bin(nb))
