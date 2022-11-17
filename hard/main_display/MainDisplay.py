@@ -8,11 +8,11 @@ from hard.RPiConfig import RPiConfig
 class MainDisplay:
     MAX_X_LINE: int = 8
     MAX_Y_LINE: int = 14
-    is_display_completed: bool = True
-    displaying: list[int] = []
-    displayed_lines = 0
 
     def __init__(self):
+        self.is_display_completed: bool = True
+        self.displaying: list[int] = []
+        self.displayed_lines = 0
         self.disref: DisplayRefresh = DisplayRefresh(
             RPiConfig.DISREF_SER,
             RPiConfig.DISREF_SCK,

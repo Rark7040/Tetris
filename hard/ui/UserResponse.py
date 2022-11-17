@@ -1,5 +1,6 @@
 class UserResponse:
-    responses: int = 0b0
+    def __init__(self):
+        self.responses: int = 0b0
 
     def write(self, button_response: int):
         self.responses |= button_response

@@ -8,7 +8,6 @@ from hard.ui.UserResponse import UserResponse
 
 
 class AsyncButtonListener:
-
     def __init__(self, response: UserResponse):
         self.response = response
 

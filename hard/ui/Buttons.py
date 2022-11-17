@@ -2,7 +2,6 @@ from enum import Enum
 
 
 class Buttons(Enum):
-
     # 1 is pressed, 0 is released
     RIGHT_ROTATE: int = 0b1
     LEFT_ROTATE: int = 0b10

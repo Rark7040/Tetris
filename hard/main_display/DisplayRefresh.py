@@ -5,10 +5,10 @@ from hard.U74HC595AG import U74HC595AG
 class DisplayRefresh(U74HC595AG):
     MAX_BUS_PORT: int = 16
     USE_BUS_PORT: int = 14
-    pos: int = 1
 
     def __init__(self, ser: int, sck: int, rck: int):
         super().__init__(ser, sck, rck)
+        self.pos: int = 1
         self.__serial_input(True)
         self.__latch()
 
