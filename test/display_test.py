@@ -105,13 +105,13 @@ class TransistorArray:
 
 
 # 1ビット目は無視される
-bits = 0b111001100
+bits = 0b111111111
 
 shift = ShiftRegister()
 sync = TransistorArray()
 
 for _ in range(10000):
-    # time.sleep(0.5)
+    time.sleep(0.05)
     shift.on_update()
     sync.output(bits)
 
