@@ -33,4 +33,3 @@ class AsyncButtonListener:
 
         else:
             self.response.clear(button)
-
