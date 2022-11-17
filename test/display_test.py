@@ -36,11 +36,11 @@ class ShiftRegister:
 
     def deploy(self):
         GPIO.output(shift_rclk, GPIO.HIGH)
-        time.sleep(0.5)
+        # time.sleep(0.5)
         GPIO.output(shift_rclk, GPIO.LOW)
 
     def input(self, sig: int):
-        time.sleep(0.5)
+       #  time.sleep(0.5)
         GPIO.output(shift_ser, GPIO.HIGH if sig == 1 else GPIO.LOW)
 
     def shift(self):
@@ -52,7 +52,7 @@ class ShiftRegister:
             self.input(1)
 
         GPIO.output(shift_srclk, GPIO.HIGH)
-        time.sleep(0.5)
+        # time.sleep(0.5)
         GPIO.output(shift_srclk, GPIO.LOW)
 
     # TODO 後程基板設計を変えて簡略化したい

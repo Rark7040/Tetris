@@ -1,2 +1,2 @@
-b = 0b1
-print(bin(b << 1))
+b = 0b110011
+print(bin((b & ~(0b1 << 1))))
