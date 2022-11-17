@@ -5,34 +5,34 @@ import copy
 class BitBlock:
     def __init__(self):
         # horizontally bits
-        self.bits: list[int] = []
+        self.__bits: list[int] = []
 
     def set(self, b: int, idx: int | None = None):
         if b < 0b1:
             raise ValueError("this func is expect int of more then 0, was given " + b.__str__() + '('+bin(b)+')')
 
         if idx is None:
-            self.bits.append(b)
+            self.__bits.append(b)
             return
 
         try:
-            self.bits[idx] = b
+            self.__bits[idx] = b
 
         except IndexError:
-            self.bits.append(b)
+            self.__bits.append(b)
 
     def get(self, idx: int, fallback: int | None = None) -> int | None:
         try:
-            return self.bits[idx]
+            return self.__bits[idx]
 
         except IndexError:
             return fallback
 
     def get_all_bits(self) -> list[int]:
-        return self.bits
+        return self.__bits
 
     def get_cloning_bits(self) -> list[int]:
-        return copy.deepcopy(self.bits)
+        return copy.deepcopy(self.__bits)
 
     def rotate_to_left(self) -> BitBlock:
         result: BitBlock = BitBlock()
