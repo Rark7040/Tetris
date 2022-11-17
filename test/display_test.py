@@ -86,7 +86,7 @@ class TransistorArray:
         GPIO.output(sync_rclk, GPIO.LOW)
 
     def input(self, sig: int):
-        time.sleep(0.5)
+        # time.sleep(0.5)
         GPIO.output(sync_ser, GPIO.HIGH if sig == 1 else GPIO.LOW)
 
     def shift(self):
@@ -111,7 +111,7 @@ shift = ShiftRegister()
 sync = TransistorArray()
 
 for _ in range(10000):
-    time.sleep(0.5)
+    # time.sleep(0.5)
     shift.on_update()
     sync.output(bits)
 
