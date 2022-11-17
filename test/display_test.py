@@ -40,7 +40,7 @@ class ShiftRegister:
         GPIO.output(shift_rclk, GPIO.LOW)
 
     def input(self, sig: int):
-       #  time.sleep(0.5)
+        #  time.sleep(0.5)
         GPIO.output(shift_ser, GPIO.HIGH if sig == 1 else GPIO.LOW)
 
     def shift(self):
@@ -105,14 +105,39 @@ class TransistorArray:
 
 
 # 1ビット目は無視される
-bits = 0b110000000
+bits = [
+    0b1_11111111,
+    0b1_00001000,
+    0b1_00001000,
+    0b1_11111111,
+    0b1_00000000,
+    0b1_11111111,
+    0b1_10001001,
+    0b1_10001001,
+    0b1_10001001,
+    0b1_00000000,
+    0b1_11111111,
+    0b1_10000000,
+    0b1_10000000,
+    0b1_10000000,
+]
 
 shift = ShiftRegister()
 sync = TransistorArray()
 
+i = 0
 for _ in range(10000):
     time.sleep(0.1)
     shift.on_update()
-    sync.output(bits)
+
+    try:
+        b = bits[i]
+
+    except:
+        i = 0
+        b = bits[i]
+
+    sync.output(b)
+    i += 1
 
 GPIO.cleanup()
