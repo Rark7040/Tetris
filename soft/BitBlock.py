@@ -8,6 +8,9 @@ class BitBlock:
         self.bits: list[int] = []
 
     def set(self, b: int, idx: int | None = None):
+        if b < 0b1:
+            raise ValueError("this func is expect int of more then 0, was given " + b.__str__() + '('+bin(b)+')')
+
         if idx is None:
             self.bits.append(b)
             return
