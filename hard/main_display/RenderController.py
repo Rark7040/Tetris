@@ -11,6 +11,6 @@ class RenderController(U74HC595AG):
 
         while pattern != 0b1:
             dump = pattern & 0b1
-            self.__serial_input(True if dump == 0b1 else False)
-            self.__shift()
+            self.serial_input(True if dump == 0b1 else False)
+            self.shift()
             pattern = pattern >> 1

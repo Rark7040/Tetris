@@ -10,21 +10,21 @@ class U74HC595AG(metaclass=ABCMeta):
         self.sck: int = sck
         self.rck: int = rck
 
-    def __shift(self):  # SCK
+    def shift(self):  # SCK
         GPIO.output(self.sck, GPIO.HIGH)
         GPIO.output(self.sck, GPIO.LOW)
 
-    def __serial_input(self, sig: bool):  # SER
+    def serial_input(self, sig: bool):  # SER
         GPIO.output(self.ser, GPIO.HIGH if sig else GPIO.LOW)
 
-    def __latch(self):  # RCK
+    def latch(self):  # RCK
         GPIO.output(self.rck, GPIO.HIGH)
         GPIO.output(self.rck, GPIO.LOW)
 
     # TODO 後程基板設計を変えて簡略化したい
     def clear(self):
         for _ in range(self.MAX_BUS_PORT):
-            self.__serial_input(False)
-            self.__shift()
+            self.serial_input(False)
+            self.shift()
 
-        self.__latch()
+        self.latch()
