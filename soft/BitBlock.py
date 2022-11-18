@@ -41,10 +41,8 @@ class BitBlock:
             i: int = 0
 
             while b != 0b1:
-                stored_b = result.get(i, 0b1)
-                stored_b = (stored_b << 1) | (0b1 & b)
+                result.set((result.get(i, 0b1) << 1) | (0b1 & b), i)
                 b = b >> 1
-                result.set(stored_b, i)
                 i += 1
 
         return result

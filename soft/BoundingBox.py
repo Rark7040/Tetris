@@ -12,7 +12,7 @@ class BoundingBox:
 
     # TODO: 1x1マス以上のbbにも対応
     # not inside
-    def is_colliding(self, v2d: Vector2D) -> bool:
+    def is_colliding_side(self, v2d: Vector2D) -> bool:
         if self.is_inside(v2d):
             return False
-        return self.start.x - 1 < v2d.x < self.end.x + 1 and self.start.y - 1 < v2d.y < self.end.y + 1
+        return self.start.x - 1 < v2d.x < self.end.x + 1
