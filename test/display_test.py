@@ -40,7 +40,7 @@ class ShiftRegister:
         GPIO.output(shift_rclk, GPIO.LOW)
 
     def input(self, sig: int):
-        # time.sleep(0.5)
+        print("input")
         GPIO.output(shift_ser, GPIO.HIGH if sig == 1 else GPIO.LOW)
 
     def shift(self):
@@ -127,7 +127,6 @@ sync = TransistorArray()
 i = 0
 for _ in range(10000):
     time.sleep(0.1)
-
 
     if i >= len(bits):
         i = 0
