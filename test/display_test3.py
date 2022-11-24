@@ -65,8 +65,6 @@ class DisplayRefresh(U74HC595AG):
         self.latch()
 
     def update(self):
-        self.pos += 1
-
         if self.pos > self.USE_BUS_PORT:
             self.pos = 1
             self.clear()
@@ -75,7 +73,7 @@ class DisplayRefresh(U74HC595AG):
 
         else:
             self.shift()
-
+        self.pos += 1
         self.latch()
 
 
