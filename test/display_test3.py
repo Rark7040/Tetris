@@ -134,7 +134,6 @@ class MainDisplay:
 
     def update(self):
         while True:
-            print(".")
             if self.is_display_completed:
                 # 画面のちらつき防止のため、描画対象がない場合は最後に描画したものを描画し続けます
                 self.is_display_completed = False
