@@ -167,5 +167,14 @@ display.display(
         0b_1111_1111,
     ]
 )
+
+
+print(
+    "{",
+    RPiConfig.DISREF_SER.value,
+    RPiConfig.DISREF_SCK.value,
+    RPiConfig.DISREF_RCK.value,
+    "}"
+)
 print("!!")
 asyncio.get_event_loop().run_until_complete(display.async_loop())
