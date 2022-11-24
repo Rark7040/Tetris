@@ -27,4 +27,3 @@ class DisplayRefresh(U74HC595AG):
             self.shift()
 
         self.latch()
-        pass
