@@ -125,13 +125,14 @@ sync = TransistorArray()
 i = 0
 for _ in range(10000):
     time.sleep(0.1)
-    shift.on_update()
+
 
     if i >= len(bits):
         i = 0
 
     print(i)
     sync.output(bits[i])
+    shift.on_update()
     i += 1
 
 GPIO.cleanup()
