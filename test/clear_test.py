@@ -130,6 +130,10 @@ bits = [
 shift = ShiftRegister()
 sync = TransistorArray()
 shift.clear()
+print("shift clear")
+time.sleep(3.0)
+print("sync clear")
+shift.clear()
 
 time.sleep(3.0)
 i = 0
