@@ -25,7 +25,7 @@ class ShiftRegister:
     now_input = 0
 
     def __init__(self):
-        self.input(1)
+        self.input(0)
         self.deploy()
 
     def on_update(self):
