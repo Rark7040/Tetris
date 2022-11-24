@@ -33,7 +33,6 @@ class U74HC595AG(metaclass=ABCMeta):
         self.ser: int = ser
         self.sck: int = sck
         self.rck: int = rck
-        print(self.ser, self.sck, self.rck)
 
     def shift(self):  # SCK
         GPIO.output(self.sck, GPIO.HIGH)
@@ -103,14 +102,14 @@ class MainDisplay:
         self.displaying: list[int] = []
         self.displayed_lines = 0
         self.disref: DisplayRefresh = DisplayRefresh(
-            RPiConfig.DISREF_SER,
-            RPiConfig.DISREF_SCK,
-            RPiConfig.DISREF_RCK
+            RPiConfig.DISREF_SER.value,
+            RPiConfig.DISREF_SCK.value,
+            RPiConfig.DISREF_RCK.value
         )
         self.rencon: RenderController = RenderController(
-            RPiConfig.RENCON_SER,
-            RPiConfig.RENCON_SCK,
-            RPiConfig.RENCON_RCK
+            RPiConfig.RENCON_SER.value,
+            RPiConfig.RENCON_SCK.value,
+            RPiConfig.RENCON_RCK.value
         )
 
     def display(self, pattern: list[int]):
