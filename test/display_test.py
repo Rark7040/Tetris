@@ -58,7 +58,7 @@ class ShiftRegister:
     # TODO 後程基板設計を変えて簡略化したい
     def clear(self):
         for _ in range(16):
-            self.input(0)
+            # self.input(0)
             GPIO.output(shift_srclk, GPIO.HIGH)
             GPIO.output(shift_srclk, GPIO.LOW)
 
