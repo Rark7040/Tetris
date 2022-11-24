@@ -153,5 +153,3 @@ time.sleep(3.0)
 #     sync.output(bits[i])
 #     shift.on_update()
 #     i += 1
-
-GPIO.cleanup()
