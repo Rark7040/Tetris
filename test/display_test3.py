@@ -143,6 +143,7 @@ class MainDisplay:
             self.__display_line()
 
 
+GPIO.setmode(GPIO.BCM)
 display = MainDisplay()
 display.display(
     [
