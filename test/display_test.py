@@ -22,7 +22,7 @@ GPIO.setup(sync_ser, GPIO.OUT, initial=GPIO.LOW)
 
 class ShiftRegister:
     MAX = 14
-    now_input = 0
+    now_input = -1
 
     def __init__(self):
         self.input(1)
