@@ -32,8 +32,6 @@ class ShiftRegister:
         self.shift()
         self.deploy()
 
-        print(self.now_input)
-
     def deploy(self):
         GPIO.output(shift_rclk, GPIO.HIGH)
         # time.sleep(0.5)
@@ -129,10 +127,10 @@ for _ in range(10000):
     time.sleep(0.1)
     shift.on_update()
 
-    if i > len(bits):
+    if i >= len(bits):
         i = 0
 
-    # print(i)
+    print(i)
     sync.output(bits[i])
     i += 1
 
