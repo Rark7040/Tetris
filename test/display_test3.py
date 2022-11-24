@@ -39,7 +39,8 @@ class U74HC595AG(metaclass=ABCMeta):
         GPIO.output(self.sck, GPIO.LOW)
 
     def serial_input(self, sig: bool):  # SER
-        GPIO.output(self.ser, GPIO.HIGH if sig else GPIO.LOW)
+        out: int = GPIO.HIGH if sig else GPIO.LOW
+        GPIO.output(self.ser, out)
 
     def latch(self):  # RCK
         GPIO.output(self.rck, GPIO.HIGH)
