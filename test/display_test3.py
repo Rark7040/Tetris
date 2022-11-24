@@ -33,14 +33,14 @@ class U74HC595AG(metaclass=ABCMeta):
         self.ser: int = ser
         self.sck: int = sck
         self.rck: int = rck
+        print(self.ser, self.sck, self.rck)
 
     def shift(self):  # SCK
         GPIO.output(self.sck, GPIO.HIGH)
         GPIO.output(self.sck, GPIO.LOW)
 
     def serial_input(self, sig: bool):  # SER
-        # out: int = GPIO.HIGH if sig else GPIO.LOW
-        GPIO.output(self.ser, GPIO.HIGH)
+        GPIO.output(self.ser, GPIO.HIGH if sig else GPIO.LOW)
 
     def latch(self):  # RCK
         GPIO.output(self.rck, GPIO.HIGH)
