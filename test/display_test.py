@@ -48,7 +48,6 @@ class ShiftRegister:
         if self.now_input > self.MAX:
             self.now_input = 0
             self.clear()
-            self.deploy()
             self.input(1)
 
         GPIO.output(shift_srclk, GPIO.HIGH)
