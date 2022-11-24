@@ -2,9 +2,9 @@ import asyncio
 import time
 import RPi.GPIO as GPIO
 
-from test.src.hard.RPiConfig import RPiConfig
-from test.src.hard.ui.Buttons import Buttons
-from test.src.hard.ui.UserResponse import UserResponse
+from tetris.hard.RPiConfig import RPiConfig
+from tetris.hard.ui.Buttons import Buttons
+from tetris.hard.ui.UserResponse import UserResponse
 
 
 class AsyncButtonListener:

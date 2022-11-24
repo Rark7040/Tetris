@@ -1,7 +1,9 @@
-from test.src.hard.U74HC595AG import U74HC595AG
 
 
 # 2つカスケード接続されたu74hc595ag
+from tetris.hard.U74HC595AG import U74HC595AG
+
+
 class DisplayRefresh(U74HC595AG):
     MAX_BUS_PORT: int = 16
     USE_BUS_PORT: int = 14

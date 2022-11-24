@@ -1,6 +1,6 @@
 import RPi.GPIO as GPIO
 
-from test.src.hard.RPiConfig import RPiConfig
+from test.tetris.hard.RPiConfig import RPiConfig
 
 
 def main():

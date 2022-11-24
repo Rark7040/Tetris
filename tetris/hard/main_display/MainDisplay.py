@@ -1,8 +1,8 @@
 import asyncio
 
-from test.src.hard.main_display.DisplayRefresh import DisplayRefresh
-from test.src.hard.main_display.RenderController import RenderController
-from test.src.hard.RPiConfig import RPiConfig
+from tetris.hard.RPiConfig import RPiConfig
+from tetris.hard.main_display.DisplayRefresh import DisplayRefresh
+from tetris.hard.main_display.RenderController import RenderController
 
 
 class MainDisplay:

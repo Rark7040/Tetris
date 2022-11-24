@@ -1,11 +1,14 @@
 import asyncio
 
-from test.src.hard.main_display.MainDisplay import MainDisplay
-from test.src.hard.ui.AsyncButtonListener import AsyncButtonListener
-from test.src.hard.ui.UserResponse import UserResponse
 
 
 # TODO: ハード制御用のスレッドを生成
+from tetris.hard.main_display.MainDisplay import MainDisplay
+from tetris.hard.ui.AsyncButtonListener import AsyncButtonListener
+from tetris.hard.ui.UserResponse import UserResponse
+
+
+
 class Hard:
     def __init__(self):
         self.main_display: MainDisplay = MainDisplay()

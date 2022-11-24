@@ -1,4 +1,4 @@
-from test.src.soft import Vector2D
+from tetris.soft.Vector2D import Vector2D
 
 
 class BoundingBox:

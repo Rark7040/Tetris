@@ -1,5 +1,4 @@
-from test.src.hard.U74HC595AG import U74HC595AG
-
+from tetris.hard.U74HC595AG import U74HC595AG
 
 # td62003apgをラップするu74hc595ag
 class RenderController(U74HC595AG):
