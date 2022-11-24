@@ -60,7 +60,9 @@ class ShiftRegister:
     def clear(self):
         print("clear")
         for _ in range(16):
-            # self.input(0)
+            self.input(0)
+            self.deploy()
+            GPIO.output(shift_srclk, GPIO.LOW)
             GPIO.output(shift_srclk, GPIO.HIGH)
             GPIO.output(shift_srclk, GPIO.LOW)
 
