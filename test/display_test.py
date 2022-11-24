@@ -39,7 +39,7 @@ class ShiftRegister:
         GPIO.output(shift_rclk, GPIO.LOW)
 
     def input(self, sig: int):
-        #  time.sleep(0.5)
+        # time.sleep(0.5)
         GPIO.output(shift_ser, GPIO.HIGH if sig == 1 else GPIO.LOW)
 
     def shift(self):
