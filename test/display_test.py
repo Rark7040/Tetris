@@ -132,7 +132,7 @@ for _ in range(10000):
     if i > len(bits):
         i = 0
 
-    print(i)
+    # print(i)
     sync.output(bits[i])
     i += 1
 
