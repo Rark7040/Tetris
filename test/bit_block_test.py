@@ -1,4 +1,4 @@
-from soft.BitBlock import BitBlock
+from src.soft.BitBlock import BitBlock
 
 block = BitBlock()
 block.set(0b1100)

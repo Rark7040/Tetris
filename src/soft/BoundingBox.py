@@ -1,4 +1,4 @@
-from soft import Vector2D
+from src.soft import Vector2D
 
 
 class BoundingBox:

@@ -1,5 +1,5 @@
-from soft.BitBlock import BitBlock
-from soft.FallingBlock import FallingBlock
+from src.soft.BitBlock import BitBlock
+from src.soft.FallingBlock import FallingBlock
 
 
 class MainDisplay(BitBlock):

@@ -1,6 +1,6 @@
 import RPi.GPIO as GPIO
 
-from hard.RPiConfig import RPiConfig
+from src.hard.RPiConfig import RPiConfig
 
 
 def main():
@@ -12,6 +12,8 @@ def init():
 
     for pin in RPiConfig:
         GPIO.setup(pin, GPIO.OUT, initial=GPIO.LOW)
+
+
 
 
 def final():

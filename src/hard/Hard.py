@@ -1,8 +1,8 @@
 import asyncio
 
-from hard.main_display.MainDisplay import MainDisplay
-from hard.ui.AsyncButtonListener import AsyncButtonListener
-from hard.ui.UserResponse import UserResponse
+from src.hard.main_display.MainDisplay import MainDisplay
+from src.hard.ui.AsyncButtonListener import AsyncButtonListener
+from src.hard.ui.UserResponse import UserResponse
 
 
 # TODO: ハード制御用のスレッドを生成
