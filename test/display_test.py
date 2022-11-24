@@ -76,8 +76,6 @@ class TransistorArray:
             self.shift()
             b = b >> 1
 
-            print(bin(b))
-
         self.deploy()
 
     def deploy(self):
@@ -134,6 +132,7 @@ for _ in range(10000):
     if i > len(bits):
         i = 0
 
+    print(i)
     sync.output(bits[i])
     i += 1
 
