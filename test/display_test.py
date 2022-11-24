@@ -105,7 +105,7 @@ class TransistorArray:
 
 
 # 1ビット目は無視される
-bits = 0b1_111000011
+bits = 0b1_1100_0011
 
 shift = ShiftRegister()
 sync = TransistorArray()
