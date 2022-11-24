@@ -136,19 +136,20 @@ shift.clear()
 print("shift clear")
 time.sleep(3.0)
 print("sync clear")
-shift.clear()
+sync.clear()
 
 time.sleep(3.0)
-i = 0
-for _ in range(10000):
-    time.sleep(0.1)
 
-    if i >= len(bits):
-        i = 0
-
-    print(i)
-    sync.output(bits[i])
-    shift.on_update()
-    i += 1
+# i = 0
+# for _ in range(10000):
+#     time.sleep(0.1)
+#
+#     if i >= len(bits):
+#         i = 0
+#
+#     print(i)
+#     sync.output(bits[i])
+#     shift.on_update()
+#     i += 1
 
 GPIO.cleanup()
