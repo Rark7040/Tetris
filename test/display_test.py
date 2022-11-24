@@ -25,8 +25,8 @@ class ShiftRegister:
     now_input = 0
 
     def __init__(self):
-        # self.input(0)
-        # self.deploy()
+        self.input(1)
+        self.deploy()
         pass
 
     def on_update(self):
@@ -50,7 +50,7 @@ class ShiftRegister:
         if self.now_input > self.MAX:
             self.now_input = 0
             self.clear()
-            # self.input(1)
+            self.input(1)
 
         GPIO.output(shift_srclk, GPIO.HIGH)
         # time.sleep(0.5)
