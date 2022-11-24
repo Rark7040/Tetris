@@ -168,4 +168,7 @@ display.display(
     ]
 )
 print("!!")
-asyncio.get_event_loop().run_until_complete(display.async_loop())
+# asyncio.get_event_loop().run_until_complete(display.async_loop())
+
+while True:
+    display.update()
