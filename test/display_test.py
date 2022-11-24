@@ -99,6 +99,7 @@ class TransistorArray:
     def clear(self):
         for _ in range(16):
             self.input(0)
+            self.deploy()
             GPIO.output(sync_srclk, GPIO.HIGH)
             # time.sleep(0.01)
             GPIO.output(sync_srclk, GPIO.LOW)
