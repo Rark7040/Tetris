@@ -81,6 +81,7 @@ class TransistorArray:
             self.input(dump)
             self.shift()
             b = b >> 1
+            self.deploy()
 
         self.deploy()
 
