@@ -44,6 +44,7 @@ class ShiftRegister:
         GPIO.output(shift_ser, GPIO.HIGH if sig == 1 else GPIO.LOW)
 
     def shift(self):
+        print("shift")
         self.now_input += 1
 
         if self.now_input > self.MAX:
@@ -57,6 +58,7 @@ class ShiftRegister:
 
     # TODO 後程基板設計を変えて簡略化したい
     def clear(self):
+        print("clear")
         for _ in range(16):
             # self.input(0)
             GPIO.output(shift_srclk, GPIO.HIGH)
