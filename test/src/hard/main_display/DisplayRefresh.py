@@ -1,4 +1,4 @@
-from src.hard.U74HC595AG import U74HC595AG
+from test.src.hard.U74HC595AG import U74HC595AG
 
 
 # 2つカスケード接続されたu74hc595ag

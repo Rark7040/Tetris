@@ -1,6 +1,6 @@
 import RPi.GPIO as GPIO
 
-from src.hard.RPiConfig import RPiConfig
+from test.src.hard.RPiConfig import RPiConfig
 
 
 def main():

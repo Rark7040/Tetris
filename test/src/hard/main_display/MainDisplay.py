@@ -1,8 +1,8 @@
 import asyncio
 
-from src.hard.main_display.DisplayRefresh import DisplayRefresh
-from src.hard.main_display.RenderController import RenderController
-from src.hard.RPiConfig import RPiConfig
+from test.src.hard.main_display.DisplayRefresh import DisplayRefresh
+from test.src.hard.main_display.RenderController import RenderController
+from test.src.hard.RPiConfig import RPiConfig
 
 
 class MainDisplay:

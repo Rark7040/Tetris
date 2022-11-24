@@ -1,7 +1,7 @@
 import copy
 
-from src.soft import Vector2D, BoundingBox
-from src.soft.BitBlock import BitBlock
+from test.src.soft import Vector2D, BoundingBox
+from test.src.soft.BitBlock import BitBlock
 
 
 class FallingBlock(BitBlock):

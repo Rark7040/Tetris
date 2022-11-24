@@ -1,6 +1,6 @@
 import asyncio
 
-from src.hard.main_display.MainDisplay import MainDisplay
+from test.src.hard.main_display.MainDisplay import MainDisplay
 
 display = MainDisplay()
 display.display(
