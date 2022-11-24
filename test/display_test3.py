@@ -140,8 +140,8 @@ class MainDisplay:
                 self.is_display_completed = False
                 self.displayed_lines = 0
             # TODO じゅんばん逆かも
-            self.disref.update()
             self.__display_line()
+            self.disref.update()
 
 
 GPIO.setmode(GPIO.BCM)
@@ -168,7 +168,4 @@ display.display(
     ]
 )
 print("!!")
-# asyncio.get_event_loop().run_until_complete(display.async_loop())
-
-while True:
-    display.update()
+asyncio.get_event_loop().run_until_complete(display.async_loop())
