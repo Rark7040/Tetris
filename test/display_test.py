@@ -31,6 +31,7 @@ class ShiftRegister:
     def on_update(self):
         self.shift()
         self.deploy()
+        time.sleep(0.7)
 
     def deploy(self):
         GPIO.output(shift_rclk, GPIO.HIGH)
