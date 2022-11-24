@@ -25,6 +25,7 @@ class ShiftRegister:
 
     def __init__(self):
         self.now_input = 0
+        self.clear()
         self.input(1)
         self.deploy()
         pass
