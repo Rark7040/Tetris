@@ -105,7 +105,23 @@ class TransistorArray:
 
 
 # 1ビット目は無視される
-bits = 0b1_1100_0011
+bits = [
+    0b_1111_1111,
+    0b_1111_1111,
+    0b_1111_1111,
+    0b_1111_1111,
+    0b_1111_1111,
+    0b_1111_1111,
+    0b_1111_1111,
+
+    0b_1111_1111,
+    0b_1111_1111,
+    0b_1111_1111,
+    0b_1111_1111,
+    0b_1111_1111,
+    0b_1111_1111,
+    0b_1111_1111,
+]
 
 shift = ShiftRegister()
 sync = TransistorArray()
@@ -114,7 +130,11 @@ i = 0
 for _ in range(10000):
     time.sleep(0.1)
     shift.on_update()
-    sync.output(bits)
+
+    if i > len(bits):
+        i = 0
+
+    sync.output(bits[i])
     i += 1
 
 GPIO.cleanup()
